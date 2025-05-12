@@ -18,7 +18,6 @@
         "name": "next"
       }
     ],
-    "noUnusedLocals": false,
     "paths": {
       "@/*": ["./*"]
     }

@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Seatmap from './component/SeatMapComponent';
 import styles from './styles/Home.module.css'; // Hoặc tạo một file CSS riêng cho trang
 import {Seat, Floor, SeatmapProps} from './interface/type';
+import { CarouselTransition } from './component/CarouselTransition';
+
 const Home: React.FC = () => {
   const initialFloors: { [key: string]: Seat[][] } = {
     'Tầng dưới': [
@@ -43,8 +45,11 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
+    <div className="flex flex-col min-h-screen lg:mt-19">
+      <div className='carousel h-100 w-auto'>
+        <CarouselTransition/>
+      </div>
+      {/* <main className={styles.main}>
         <h1>Sơ đồ Ghế</h1>
         <div className={styles.legend}>
           <div className={styles.legendItem}>
@@ -82,7 +87,7 @@ const Home: React.FC = () => {
             </div>
           ))}
         </div>
-      </main>
+      </main> */}
     </div>
   );
 };
