@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from './component/Navbar';
-import { Footer } from "./component/Footer";
+import { Navbar } from '../component/Navbar';
+import { Footer } from "../component/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,6 +25,9 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <Navbar />
         {children}
         <Footer />
+        <script
+          type="text/javascript"
+          src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
       </body>
     </html>
   );

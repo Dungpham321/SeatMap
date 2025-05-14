@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from 'react';
-import Seatmap from './component/SeatMapComponent';
+import Seatmap from '../component/SeatMapComponent';
 import styles from './styles/Home.module.css'; // Hoặc tạo một file CSS riêng cho trang
-import {Seat, Floor, SeatmapProps} from './interface/type';
-import { CarouselTransition } from './component/CarouselTransition';
+import {Seat, Floor, SeatmapProps} from '../interface/type';
 
 const Home: React.FC = () => {
   const initialFloors: { [key: string]: Seat[][] } = {
@@ -46,9 +45,6 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen lg:mt-19">
-      <div className='carousel h-100 w-auto'>
-        <CarouselTransition/>
-      </div>
       {/* <main className={styles.main}>
         <h1>Sơ đồ Ghế</h1>
         <div className={styles.legend}>
