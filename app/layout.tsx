@@ -23,11 +23,11 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
-        {children}
+        <div className="flex flex-col min-h-screen"> 
+          {/* mt-19 */}
+          {children}
+        </div>
         <Footer />
-        <script
-          type="text/javascript"
-          src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
       </body>
     </html>
   );

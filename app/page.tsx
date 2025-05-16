@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import Seatmap from '../component/SeatMapComponent';
 import styles from './styles/Home.module.css'; // Hoặc tạo một file CSS riêng cho trang
-import {Seat, Floor, SeatmapProps} from '../interface/type';
+import { Seat, Floor, SeatmapProps } from '../interface/type';
+import CarouselComponent from '@/component/CarouselComponent';
+
 
 const Home: React.FC = () => {
   const initialFloors: { [key: string]: Seat[][] } = {
@@ -42,49 +44,50 @@ const Home: React.FC = () => {
       }
     });
   };
-
+ 
   return (
-    <div className="flex flex-col min-h-screen lg:mt-19">
-      {/* <main className={styles.main}>
-        <h1>Sơ đồ Ghế</h1>
-        <div className={styles.legend}>
-          <div className={styles.legendItem}>
-            <div className={`${styles.seat} ${styles.unavailable}`}><span className={styles.unavailableIcon}>X</span></div>
-            <span>Ghế không bán</span>
-          </div>
-          <div className={styles.legendItem}>
-            <div className={`${styles.seat} ${styles.selected}`}><span className={styles.selectedIcon}>✓</span></div>
-            <span>Đang chọn</span>
-          </div>
-          <div className={styles.legendItem}>
-            <div className={`${styles.seat} ${styles.available}`}></div>
-            <span>Còn trống</span>
-          </div>
+    <>
+      <CarouselComponent/>
+    </>
+    /* <main className={styles.main}>
+      <h1>Sơ đồ Ghế</h1>
+      <div className={styles.legend}>
+        <div className={styles.legendItem}>
+          <div className={`${styles.seat} ${styles.unavailable}`}><span className={styles.unavailableIcon}>X</span></div>
+          <span>Ghế không bán</span>
         </div>
-        <Seatmap
-          floors={floorsData}
-          onSeatClick={handleSeatClick}
-          selectedSeats={selectedSeats}
-        />
-        <div className={styles.selectedList}>
-          <h2>Ghế đã chọn:</h2>
-          {Object.entries(selectedSeats).map(([floor, seats]) => (
-            <div key={floor}>
-              <h3>{floor}:</h3>
-              {seats.length > 0 ? (
-                <ul>
-                  {seats.map((seat) => (
-                    <li key={seat}>{seat}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p>Chưa có ghế nào được chọn.</p>
-              )}
-            </div>
-          ))}
+        <div className={styles.legendItem}>
+          <div className={`${styles.seat} ${styles.selected}`}><span className={styles.selectedIcon}>✓</span></div>
+          <span>Đang chọn</span>
         </div>
-      </main> */}
-    </div>
+        <div className={styles.legendItem}>
+          <div className={`${styles.seat} ${styles.available}`}></div>
+          <span>Còn trống</span>
+        </div>
+      </div>
+      <Seatmap
+        floors={floorsData}
+        onSeatClick={handleSeatClick}
+        selectedSeats={selectedSeats}
+      />
+      <div className={styles.selectedList}>
+        <h2>Ghế đã chọn:</h2>
+        {Object.entries(selectedSeats).map(([floor, seats]) => (
+          <div key={floor}>
+            <h3>{floor}:</h3>
+            {seats.length > 0 ? (
+              <ul>
+                {seats.map((seat) => (
+                  <li key={seat}>{seat}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>Chưa có ghế nào được chọn.</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </main> */
   );
 };
 

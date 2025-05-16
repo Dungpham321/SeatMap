@@ -23,3 +23,62 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+/* #slider-wrapper {
+}
+
+#slider-wrapper .slick-slide {
+
+} */
+#slider-wrapper .slick-initialized {
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  height: 100% !important;
+}
+#slider-card {
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+  height: 380px;
+  max-width: 232px;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+.slick-list{
+height: 600px !important;
+align-items: center !important;
+text-align: center !important;
+display: block !important;
+}
+.slick-dots{
+  bottom: 0px !important;
+}
+
+#slider-card {
+  opacity: 0.2;
+  transition: all 0.3s;
+}
+.slick-center #slider-card {
+  max-width: 690px;
+  opacity: 1;
+}
+#slider-card #slider-card--content {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  flex-direction: column;
+  flex-grow: 0;
+}
+@media (min-width: 16rem) {
+    .mainc {
+        margin-top: calc(var(--spacing) * 19); /* 76px hoặc 4.75rem */
+    }
+}
